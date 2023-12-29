@@ -1,5 +1,5 @@
 ---
-title: "TelemetryJet CLI"
+title: "Battery Tracker"
 weight: 1
 menu:
   root:

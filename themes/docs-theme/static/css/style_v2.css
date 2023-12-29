@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #e2e8f0;
+    background-color: #fefefe;
     color: #10161A;
     font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: relative;
@@ -24,6 +24,7 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     height: 100vh;
+    background-color: rgba(0,0,0,0.05);
 }
 
 #headerAlert {
@@ -46,14 +47,11 @@ body {
 }
 
 #headerSecondary {
-    background-color: #D8E1E8;
-    color: #10161a;
-    border-top: 1px solid #bfccd6;
+    border-bottom: 1px solid #bfccd6;
     margin-bottom: 10px;
     min-height: 32px;
     max-height: 32px;
-    -webkit-box-shadow: 0 0 0 1px rgba(16,22,26,.04), 0 1px 1px rgba(16,22,26,.08), 0 2px 6px rgba(16,22,26,.08);
-    box-shadow: 0 0 0 1px rgba(16,22,26,.04), 0 1px 1px rgba(16,22,26,.08), 0 2px 6px rgba(16,22,26,.08);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 #headerSecondary a {
     color: #10161a;

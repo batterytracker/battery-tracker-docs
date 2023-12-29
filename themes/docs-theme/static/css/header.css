@@ -1,19 +1,11 @@
 #header {
     flex: 0 0 auto;
     overflow: visible;
-}
-
-#menu {
-    background-color: #ffffff;
-}
-
-#header {
-    background-color: #ffffff;
     color: black;
+    background-color: rgba(255,255,255,0.4);
+    border-bottom:1px solid rgba(0,0,0,0.1);
 }
-#headerNavBar {
-    background-color: #ffffff;
-}
+
 #navbarLogoIcon {
 }
 
