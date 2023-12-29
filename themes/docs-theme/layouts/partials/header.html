@@ -1,0 +1,63 @@
+<div id="header" class="bp3-dark">
+    <section>
+        <div id="headerNavBar" class="bp3-navbar">
+            <div id="headerMainLogo" class="bp3-navbar-group bp3-align-left">
+                <a class="bp3-button bp3-minimal" href="/">
+                    <div id="navbarLogo" class="bp3-navbar-heading">BatteryTracker
+                    </div>
+                    <a class="bp3-button bp3-minimal tabletButton" href="/">Documentation</a>
+                </a>
+            </div>
+            <div class="bp3-navbar-group bp3-align-right">
+                <a id="backToHomeButton" class="bp3-button bp3-minimal desktopButton" href="{{ .Site.Params.siteUrl }}"><span class="bp3-icon bp3-icon-arrow-left"></span>Home</a>
+                <span class="bp3-navbar-divider desktopButton"></span>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="headerSecondary">
+    {{ $currentPage := . }}
+    {{ $menu := .Site.Menus.server }}
+    {{ $menuName := "home" }}
+    {{ if eq $currentPage.Section "server" }}
+        {{ $menu = .Site.Menus.server}}
+        {{ $menuName = "server" }}
+    {{end}}
+    {{ if eq $currentPage.Section "cli" }}
+        {{ $menu = .Site.Menus.cli}}
+        {{ $menuName = "cli" }}
+    {{end}}
+    {{ if eq $currentPage.Section "arduino_sdk" }}
+        {{ $menu = .Site.Menus.arduino_sdk}}
+        {{ $menuName = "arduino_sdk" }}
+    {{end}}
+    <section class="noJsHidden">
+        <div class="mobileHeaderFlexContainer">
+            <div class="bp3-select bp3-minimal mobileSidebarNavDropdown">
+                <select onchange="window.location.replace(this.options[this.selectedIndex].value)">
+                    <option value="/">Go to page...</option>
+                    {{ range $menu }}
+                        {{ if .HasChildren }}
+                        <optgroup label="{{ .Title }}">
+                            {{ range .Children }}
+                                <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>{{ .Title }}</option>
+                                {{if  .HasChildren }}
+                                    {{ range .Children }}
+                                        <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>&nbsp;&nbsp;&nbsp;{{ .Title }}</option>
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                        </optgroup>
+                        {{ end }}
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+    </section>
+    <noscript>
+        <section id="headerSecondaryNoscriptPath">
+            <a href="/docs/">Docs</a>&nbsp;<span class="bp3-icon bp3-icon-chevron-right"></span>&nbsp;
+            <a href="{{ .URL }}">{{ $currentPage.Title }}</a>
+        </section>
+    </noscript>
+</div>
