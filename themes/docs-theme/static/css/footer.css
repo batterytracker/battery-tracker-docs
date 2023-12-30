@@ -11,9 +11,10 @@
 #secondaryFooter {
     position: relative;
     flex: 0 0 auto;
-    color: #738694;
-    background-color: #CED9E0;
-    font-family: monospace;
+    color: #0000009d;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    background-color: rgba(255,255,255,0.1);
+    font-size: 12px;
 }
 
 .secondaryFooterContent span {
@@ -22,7 +23,7 @@
 }
 
 #secondaryFooter a {
-    color: #738694;
+    color: #0000009d;
 }
 
 .footerMoreLink {

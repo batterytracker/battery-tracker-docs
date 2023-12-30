@@ -1,49 +1,44 @@
-<div id="header">
-    <section>
-        <div id="headerNavBar">
-            <div id="headerMainLogo">
-                <a href="/">
-                    <img width="200" src="/img/logo-text-black.png"/>
-                </a>
-            </div>
-            <div class="bp3-navbar-group bp3-align-right">
-                <a id="backToHomeButton" class="bp3-button bp3-minimal desktopButton" href="{{ .Site.Params.siteUrl }}"><span class="bp3-icon bp3-icon-arrow-left"></span>Home</a>
-                <span class="bp3-navbar-divider desktopButton"></span>
-            </div>
+<div id="header-outer">
+    <div id="header-inner">
+        <a href="/">
+            <img id="header-image" height="35" src="/img/logo-text-black.png"/>
+        </a>
+        <div id="header-label">
+            <span style="opacity: 0.2; margin-right: 5px;">&mdash;</span> User Guide
         </div>
-    </section>
+        <div style="flex: 1">
+        </div>
+        <a href="/" class="back-to-home-link">
+            <span class="bp3-icon bp3-icon-arrow-left"></span>
+            Back Home
+        </a>
+
+
+    </div>
 </div>
-<div id="headerSecondary">
+<div id="subheader-outer">
     {{ $currentPage := . }}
     {{ $menu := .Site.Menus.main }}
     {{ $menuName := "main" }}
-    <section class="noJsHidden">
-        <div class="mobileHeaderFlexContainer">
-            <div class="bp3-select bp3-minimal mobileSidebarNavDropdown">
-                <select onchange="window.location.replace(this.options[this.selectedIndex].value)">
-                    <option value="/">Go to page...</option>
-                    {{ range $menu }}
-                        {{ if .HasChildren }}
-                        <optgroup label="{{ .Title }}">
-                            {{ range .Children }}
-                                <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>{{ .Title }}</option>
-                                {{if  .HasChildren }}
-                                    {{ range .Children }}
-                                        <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>&nbsp;&nbsp;&nbsp;{{ .Title }}</option>
-                                    {{ end }}
+    <div id="subheader-inner">
+        <div class="bp3-select bp3-minimal">
+            <select onchange="window.location.replace(this.options[this.selectedIndex].value)">
+                <option value="/">Go to page...</option>
+                {{ range $menu }}
+                    {{ if .HasChildren }}
+                    <optgroup label="{{ .Title }}">
+                        {{ range .Children }}
+                            <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>{{ .Title }}</option>
+                            {{if  .HasChildren }}
+                                {{ range .Children }}
+                                    <option value="{{ .URL }}" {{ if eq .URL $currentPage.URL }}selected{{end}}>&nbsp;&nbsp;&nbsp;{{ .Title }}</option>
                                 {{ end }}
                             {{ end }}
-                        </optgroup>
                         {{ end }}
+                    </optgroup>
                     {{ end }}
-                </select>
-            </div>
+                {{ end }}
+            </select>
         </div>
-    </section>
-    <noscript>
-        <section id="headerSecondaryNoscriptPath">
-            <a href="/docs/">Docs</a>&nbsp;<span class="bp3-icon bp3-icon-chevron-right"></span>&nbsp;
-            <a href="{{ .URL }}">{{ $currentPage.Title }}</a>
-        </section>
-    </noscript>
+    </div>
 </div>

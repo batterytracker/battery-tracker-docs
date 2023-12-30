@@ -53,6 +53,7 @@
     padding: 0px;
 }
 
+
 .stickyTableOfContents ul {
     list-style: none;
     margin: 0px;
@@ -64,7 +65,7 @@
 .sidebarMenuItem {
     padding: 2px;
     padding-left: 6px;
-    border-radius: 3px;
+    border-radius: 2px;
     position: relative;
 }
 
@@ -81,12 +82,12 @@
 }
 
 .sidebarMenuItemSelected {
-    background-color: #137CBD;
-    color: #FFFFFF;
+    background-color: #f9c60e85;
+    color: black;
 }
 .sidebarMenuItemSelected:hover {
-    background-color: #137CBD !important;
-    color: #FFFFFF;
+    background-color: #f9c60ec2 !important;
+    color: black;
 }
 .sidebarMenuItemSelected .bp3-tag {
     color: #FFFFFF !important;
@@ -95,7 +96,7 @@
     margin-right: 5px;
 }
 .sidebarMenuItem:hover {
-    background-color: #BFCCD6;
+    background-color: #d7d7d7;
 }
 
 .sidebarMenuItem .bp3-icon {
