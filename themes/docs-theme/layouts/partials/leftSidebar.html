@@ -13,16 +13,11 @@
 							class="sidebarMenuItem {{if ($currentPage.IsMenuCurrent $menuName .)}}sidebarMenuItemSelected{{end}}">
 							<div class="buttonText">{{ .Pre }}{{ .Title }}{{ .Post }}
 								{{if  .HasChildren }}
-								{{if or ($currentPage.IsMenuCurrent $menuName .) ($currentPage.HasMenuCurrent $menuName .)}}
 								<span class="bp3-icon bp3-icon-chevron-down"></span>
-								{{ else }}
-								<span class="bp3-icon bp3-icon-chevron-right"></span>
-								{{ end }}
 								{{ end }}
 							</div>
 						</div>
 					</a>
-					{{if or ($currentPage.IsMenuCurrent $menuName .) ($currentPage.HasMenuCurrent $menuName .)}}
 					{{if  .HasChildren }}
 						<div class="sidebarMenuChildrenExpandable">
 							{{ range .Children }}
@@ -34,7 +29,6 @@
 								</a>
 							{{ end }}
 						</div>
-					{{ end }}
 					{{ end }}
 				{{ end }}
 				<br/>

@@ -6,7 +6,7 @@ menu:
     title: "CLI"
   main:
     parent: "guides"
-    identifier: "cli_overview"
+    identifier: "overview"
     title: "Overview"
 ---
 
